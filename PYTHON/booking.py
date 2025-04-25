@@ -20,7 +20,7 @@ class Bookings:
     def make_booking(self,buses,bookings):
         self.name=input("Enter passenger name : ")
         self.bno=int(input("enter the bus no : "))
-        d=input("Enter the date in dd-mm-yy")
+        d=input("Enter the date in dd-mm-yy : ")
         self.date=datetime.strptime(d,"%d-%m-%Y").date();
         if(self.isavailable(buses,bookings,self.bno,self.date)):
             bookings.append(self)
@@ -44,7 +44,7 @@ def main():
     for i in buses:
         i.display()
     while(True):
-        opt=int(input("Enter 1 to book,Enter 2 to exit"))
+        opt=int(input("Enter 1 to book,Enter 2 to exit : "))
         if(opt==1):
             book=Bookings()
             book.make_booking(buses,bookings)
